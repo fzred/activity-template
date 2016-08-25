@@ -1,5 +1,5 @@
 <template>
-    <b2c-pro-list :list="proList" :pprd="pprd"></b2c-pro-list>
+    <b2c-pro-list :list="proList"></b2c-pro-list>
 </template>
 <script type="text/babel">
     import util from '../common/util'
@@ -11,7 +11,7 @@
             }
         },
         methods: {},
-        props: ['item', 'pprd'],
+        props: ['item'],
         ready(){
             this.$http.get("/api/product/getProductList.jsp", {
                 actid: this.item.content,

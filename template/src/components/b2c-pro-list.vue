@@ -1,7 +1,7 @@
 <template>
     <ul class="prolist">
         <li v-for="item in list">
-            <div class="item-wrap"><a :href="item.pid | b2cProLink | addParams 'ptag' pprd $index+1">
+            <div class="item-wrap"><a :href="item.pid | b2cProLink">
                 <div class="thumbnail"><img
                         :src="item.logourl">
                 </div>
@@ -22,6 +22,6 @@
 </template>
 <script>
     export default{
-        props: ["list", 'pprd'],
+        props: ["list"],
     }
 </script>

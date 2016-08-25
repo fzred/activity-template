@@ -1,8 +1,8 @@
 <template>
     <div class="banner-img">
         <template v-for="item in moduleList">
-            <a type="1" pprd="{{pprd1}}.{{pprd2+$index}}.{{$index+1}}" v-if="item.type==1"
-               :href="item.content || undefined | addParams 'ptag' pprd3 '.' pprd2+$index '.' $index+1"><img :src="item.imgUrl"></a>
+            <a type="1" v-if="item.type==1"
+               :href="item.content || undefined"><img :src="item.imgUrl"></a>
 
 
             <a v-if="item.type==2" :href="item.content | b2cProListLink"><img :src="item.imgUrl"></a>
@@ -21,8 +21,8 @@
             </pager>
 
             <div type="8" v-if="item.type==8" class="display-flex type8and9">
-                <a :href="item.content[0] | b2cProLink | addParams 'ptag' pprd3 '.' pprd2+$index '.' 1"><img :src="item.imgUrl[0]"></a>
-                <a :href="item.content[1] | b2cProLink | addParams 'ptag' pprd3 '.' pprd2+$index '.' 2"><img :src="item.imgUrl[1]"></a>
+                <a :href="item.content[0] | b2cProLink"><img :src="item.imgUrl[0]"></a>
+                <a :href="item.content[1] | b2cProLink"><img :src="item.imgUrl[1]"></a>
             </div>
 
             <div v-if="item.type==9" class="display-flex type8and9">
@@ -52,7 +52,7 @@
             <type16 v-if="item.type==16" :item="item"></type16>
             <type17 v-if="item.type==17" :actid="item.content"></type17>
             <type18 v-if="item.type==18" :actid="item.content"></type18>
-            <type19 v-if="item.type==19" :item="item" :pprd="pprd1+'.'+(pprd2+$index)+'.'"></type19>
+            <type19 v-if="item.type==19" :item="item"></type19>
             <type20 v-if="item.type==20" :item="item"></type20>
 
         </template>
