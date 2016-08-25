@@ -19,14 +19,6 @@ require('./directives')(Vue)
 var router = new Router();
 
 router.map({
-    'special': {
-        name: 'special',
-        component: require('./components/special.vue')
-    },
-    '/index/:id/:pageNo': {
-        name: 'index',
-        component: require('./components/index.vue')
-    },
     '/b2c-pro-list/:id/:pageNo': {
         name: 'b2c-pro-list',
         component: require('./components/b2c-shop-list.vue')
