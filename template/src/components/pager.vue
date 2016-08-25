@@ -5,7 +5,7 @@
     <div class="pager-btn" v-show="pages>1">
         <div class="inner">
             <button @click="prev" class="prev j-prev">&lt; 上一页</button>
-            <span><i class="j-current-page">{{pageNo}}</i> / <i class="j-total-page">{{pages}}</i> 页</span>
+            <span><i class="j-current-page">\{{pageNo}}</i> / <i class="j-total-page">\{{pages}}</i> 页</span>
             <button @click="next" class="next j-next">下一页 &gt;</button>
         </div>
     </div>

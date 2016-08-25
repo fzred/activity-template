@@ -3,7 +3,7 @@
         <img v-if="likeData.like==1" :src="item.imgUrl[0]">
         <img v-else :src="item.imgUrl[1]" @click="like">
 
-        <p>{{likeData.count}}<b>+</b></p>
+        <p>\{{likeData.count}}<b>+</b></p>
 
     </div>
 </template>

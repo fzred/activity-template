@@ -6,12 +6,12 @@
                         :src="item.logourl">
                 </div>
                 <dl class="details">
-                    <dt class="title">{{item.name}}</dt>
-                    <dd class="price"><label>￥ <strong>{{item.price | coverPrice}}</strong></label></dd>
-                    <dd class="source">{{item.depotName}}</dd>
+                    <dt class="title">\{{item.name}}</dt>
+                    <dd class="price"><label>￥ <strong>\{{item.price | coverPrice}}</strong></label></dd>
+                    <dd class="source">\{{item.depotName}}</dd>
                 </dl>
             </a>
-                <div class="discount">{{item.price | discount item.referance_price}}折</div>
+                <div class="discount">\{{item.price | discount item.referance_price}}折</div>
                 <div v-if="false" class="seldout-cover hide"><span class="seldout"></span></div>
             </div>
         </li>

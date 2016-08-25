@@ -9,27 +9,27 @@
             <div v-if="curTime < actInfo.actEndtime && curTime > actInfo.actBegintime" class="display-flex underway">
                 <div>
                     <p>进行中</p>
-                    <span>{{actInfo.actEndtime | countdown curTime 'hh' true}}</span><i class="iconfont">&#xe60b;</i>
-                    <span>{{actInfo.actEndtime | countdown curTime 'mm' true}}</span><i class="iconfont">&#xe60b;</i>
-                    <span>{{actInfo.actEndtime | countdown curTime 'ss' true}}</span>
+                    <span>\{{actInfo.actEndtime | countdown curTime 'hh' true}}</span><i class="iconfont">&#xe60b;</i>
+                    <span>\{{actInfo.actEndtime | countdown curTime 'mm' true}}</span><i class="iconfont">&#xe60b;</i>
+                    <span>\{{actInfo.actEndtime | countdown curTime 'ss' true}}</span>
                 </div>
             </div>
             <div v-if="curTime < actInfo.actBegintime" class="display-flex immediately">
                 <div>
                     <p>即将开售</p>
-                    <span>{{actInfo.actBegintime | countdown curTime 'hh' true}}</span><i class="iconfont">&#xe60b;</i>
-                    <span>{{actInfo.actBegintime | countdown curTime 'mm' true}}</span><i class="iconfont">&#xe60b;</i>
-                    <span>{{actInfo.actBegintime | countdown curTime 'ss' true}}</span>
+                    <span>\{{actInfo.actBegintime | countdown curTime 'hh' true}}</span><i class="iconfont">&#xe60b;</i>
+                    <span>\{{actInfo.actBegintime | countdown curTime 'mm' true}}</span><i class="iconfont">&#xe60b;</i>
+                    <span>\{{actInfo.actBegintime | countdown curTime 'ss' true}}</span>
                 </div>
             </div>
 
-            <div class="display-flex" onclick="location.href='{{actInfo.pid | b2cProLink}}'">
+            <div class="display-flex" onclick="location.href='\{{actInfo.pid | b2cProLink}}'">
                 <img :src="actInfo.pLogo">
                 <div class="display-flex">
-                    <p>{{ actInfo.pName }}</p>
+                    <p>\{{ actInfo.pName }}</p>
                     <div class="price display-flex">
-                        <span>限时价:<b>￥{{ actInfo.actPrice | coverPrice 0 }}</b></span>
-                        <span>市场价:￥{{ actInfo.referPrice | coverPrice 0 }}</span>
+                        <span>限时价:<b>￥\{{ actInfo.actPrice | coverPrice 0 }}</b></span>
+                        <span>市场价:￥\{{ actInfo.referPrice | coverPrice 0 }}</span>
                     </div>
                 </div>
             </div>

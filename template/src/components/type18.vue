@@ -1,10 +1,10 @@
 <template>
     <ul class="type18">
-        <li v-for="(index,item) in list" onclick="location.href='{{item.pid | b2cProLink}}'">
+        <li v-for="(index,item) in list" onclick="location.href='\{{item.pid | b2cProLink}}'">
             <img :src="item.logourl" class="logo"></div>
-            <div class="name line-clamp1">{{item.name}}</div>
-            <div class="title line-clamp1">{{item.title}}</div>
-            <div class="price">￥<span>{{item.price | coverPrice}}</span></div>
+            <div class="name line-clamp1">\{{item.name}}</div>
+            <div class="title line-clamp1">\{{item.title}}</div>
+            <div class="price">￥<span>\{{item.price | coverPrice}}</span></div>
             <div class="buy-btn">立即购买</div>
         </li>
     </ul>

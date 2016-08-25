@@ -5,16 +5,16 @@
                 <div class="thumbnail"><img
                         :src="item.logourl">
                 </div>
-                <p class="price-discount"><span>{{item.price | discount item.referance_price}}折</span>
-                    ￥{{item.price | coverPrice}}
+                <p class="price-discount"><span>\{{item.price | discount item.referance_price}}折</span>
+                    ￥\{{item.price | coverPrice}}
                 </p>
                 <dl class="details">
-                    <dt class="title">{{item.name}}</dt>
-                    <dd class="price"><label>￥ <strong>{{item.price | coverPrice}}</strong></label></dd>
-                    <dd class="source">{{item.depotName}}</dd>
+                    <dt class="title">\{{item.name}}</dt>
+                    <dd class="price"><label>￥ <strong>\{{item.price | coverPrice}}</strong></label></dd>
+                    <dd class="source">\{{item.depotName}}</dd>
                 </dl>
                 <div class="display-flex commission">
-                    <div>佣金{{item.commission | coverPrice}}元</div>
+                    <div>佣金\{{item.commission | coverPrice}}元</div>
                     <div>立刻分享</div>
                 </div>
             </a>

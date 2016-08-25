@@ -1,7 +1,7 @@
 <template>
     <ul class="type14">
         <li v-for="(index,item) in list">
-            <div class="info display-flex" onclick="location.href='{{item.pid | b2cProLink}}'">
+            <div class="info display-flex" onclick="location.href='\{{item.pid | b2cProLink}}'">
                 <div class="img display-flex">
                     <img v-if="index===0" src="../imgs/type14/p_01.png" class="tag">
                     <img v-if="index===1" src="../imgs/type14/p_02.png" class="tag">
@@ -9,20 +9,20 @@
                     <img v-if="index>=3" src="../imgs/type14/p_04.png" class="tag">
                     <img :src="item.logourl" class="logo"></div>
                 <div>
-                    <div class="brand">{{item.brandname}} {{item.brandename}}</div>
+                    <div class="brand">\{{item.brandname}} \{{item.brandename}}</div>
 
-                    <div class="title">{{item.name}}</div>
+                    <div class="title">\{{item.name}}</div>
 
-                    <div class="discount">{{item.price | discount item.referance_price}}折</div>
+                    <div class="discount">\{{item.price | discount item.referance_price}}折</div>
 
-                    <div class="price">￥{{item.price | coverPrice}}</div>
+                    <div class="price">￥\{{item.price | coverPrice}}</div>
 
                     <div class="buy-btn">立即购买</div>
 
                 </div>
             </div>
 
-            <div class="desc">{{item.descword}}</div>
+            <div class="desc">\{{item.descword}}</div>
             <div class="banner-img">
                 <img src="../imgs/type14/p_07.png">
             </div>

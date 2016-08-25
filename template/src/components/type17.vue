@@ -1,17 +1,17 @@
 <template>
     <ul class="type17">
         <li v-for="(index,item) in list">
-            <div class="info display-flex" :class="{reverse:index%2}" onclick="location.href='{{item.pid | b2cProLink}}'">
+            <div class="info display-flex" :class="{reverse:index%2}" onclick="location.href='\{{item.pid | b2cProLink}}'">
                 <div class="img display-flex">
                     <img :src="item.logourl" class="logo"></div>
                 <div>
-                    <div class="brand">{{item.brandname}} {{item.brandename}}</div>
+                    <div class="brand">\{{item.brandname}} \{{item.brandename}}</div>
 
-                    <div class="title">{{item.name}}</div>
+                    <div class="title">\{{item.name}}</div>
 
-                    <div class="desc">{{item.descword}}</div>
+                    <div class="desc">\{{item.descword}}</div>
 
-                    <div class="price">￥{{item.price | coverPrice}}</div>
+                    <div class="price">￥\{{item.price | coverPrice}}</div>
 
                     <div class="buy-btn">立即购买</div>
 
