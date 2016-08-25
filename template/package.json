@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "start http://127.0.0.1.com:9001/static/index.html & webpack-dev-server --inline --hot --port 9001",
+        "dev": "start http://127.0.0.1:9001/static/index.html & webpack-dev-server --inline --hot --port 9001",
         "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
     },
     "author": "",

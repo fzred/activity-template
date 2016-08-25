@@ -36,7 +36,7 @@ router.beforeEach(function ({ to, next }) {
 router.redirect({
     '/shop-list/:id': '/shoplist/:id/1',
     '/index/:id': '/index/:id/1',
-    '*': '/special',
+    '*': '/default',
 });
 
 router.start(require('./components/app.vue'), '#app')
