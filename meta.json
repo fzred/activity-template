@@ -1,5 +1,5 @@
 {
   "filters": {
-    "components/**/**": "components"
+    "src/components/**/**": "components"
   }
 }
