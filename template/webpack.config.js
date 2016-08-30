@@ -11,7 +11,7 @@ module.exports = {
     entry: './src/main.js',
     output: {
         path: './static',
-        publicPath: '/static/',
+        publicPath: './static/',
         filename: '[name].js?[hash:8]'
     },
     module: {
@@ -72,6 +72,7 @@ if (process.env.NODE_ENV === 'production') {
     ])
 } else {
     module.exports.devtool = '#source-map'
+    module.exports.output.publicPath='/static/'
     module.exports.devServer = {
         proxy: {
             '/api/*': {
