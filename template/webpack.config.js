@@ -3,7 +3,6 @@ var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 var pxtorem = require('postcss-px2rem');
 var cssLoader = { test: /\.css$/, loader: "style-loader!css-loader!postcss-loader" };
-var postcssConfig = [autoprefixer({ browsers: ["android 4", "iOS 6"] }), precss, pxtorem({ remUnit: 75 })];
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path')
 
@@ -40,12 +39,12 @@ module.exports = {
             css: 'style-loader!css-loader!postcss-loader',
             scss: 'style-loader!css-loader!postcss-loader',
         },
-        postcss: function () {
-            return postcssConfig;
-        }
+//        postcss: function () {
+//            return postcssConfig;
+//        }
     },
     postcss: function () {
-        return postcssConfig;
+        return [autoprefixer({ browsers: ["android 4", "iOS 6"] }), precss, pxtorem({ remUnit: 75 })];
     },
     plugins: [
         new HtmlWebpackPlugin({
