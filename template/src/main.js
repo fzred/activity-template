@@ -30,6 +30,7 @@ router.map({
 });
 
 router.beforeEach(function ({ to, next }) {
+    if('FastClick' in window) window.FastClick.attach(document.body)
     next()
 });
 
