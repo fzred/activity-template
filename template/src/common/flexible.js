@@ -1,21 +1,21 @@
 module.exports = function () {
-    var win        = window;
-    var lib        = window.lib = {};
-    var doc        = win.document;
-    var docEl      = doc.documentElement;
-    var metaEl     = doc.querySelector('meta[name="viewport"]');
+    var win = window;
+    var lib = window.lib = {};
+    var doc = win.document;
+    var docEl = doc.documentElement;
+    var metaEl = doc.querySelector('meta[name="viewport"]');
     var flexibleEl = doc.querySelector('meta[name="flexible"]');
-    var dpr        = 0;
-    var scale      = 0;
+    var dpr = 0;
+    var scale = 0;
     var tid;
-    var flexible   = lib.flexible || (lib.flexible = {});
+    var flexible = lib.flexible || (lib.flexible = {});
 
     if (metaEl) {
         console.warn('将根据已有的meta标签来设置缩放比例');
         var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
         if (match) {
             scale = parseFloat(match[1]);
-            dpr   = parseInt(1 / scale);
+            dpr = parseInt(1 / scale);
         }
     } else if (flexibleEl) {
         var content = flexibleEl.getAttribute('content');
@@ -23,19 +23,19 @@ module.exports = function () {
             var initialDpr = content.match(/initial\-dpr=([\d\.]+)/);
             var maximumDpr = content.match(/maximum\-dpr=([\d\.]+)/);
             if (initialDpr) {
-                dpr   = parseFloat(initialDpr[1]);
+                dpr = parseFloat(initialDpr[1]);
                 scale = parseFloat((1 / dpr).toFixed(2));
             }
             if (maximumDpr) {
-                dpr   = parseFloat(maximumDpr[1]);
+                dpr = parseFloat(maximumDpr[1]);
                 scale = parseFloat((1 / dpr).toFixed(2));
             }
         }
     }
 
     if (!dpr && !scale) {
-        var isAndroid        = win.navigator.appVersion.match(/android/gi);
-        var isIPhone         = win.navigator.appVersion.match(/iphone/gi);
+        var isAndroid = win.navigator.appVersion.match(/android/gi);
+        var isIPhone = win.navigator.appVersion.match(/iphone/gi);
         var devicePixelRatio = win.devicePixelRatio;
         if (isIPhone) {
             // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
@@ -72,9 +72,14 @@ module.exports = function () {
         if (width / dpr > 750) {
             width = 750 * dpr;
         }
-        var rem              = width / 10;
+        var rem = width / 10;
         docEl.style.fontSize = rem + 'px';
-        flexible.rem         = win.rem = rem;
+        const realitySize = parseInt(window.getComputedStyle(document.documentElement).fontSize)
+        if (rem != realitySize) {
+            rem = rem * rem / realitySize
+            docEl.style.fontSize = rem + 'px'
+        }
+        flexible.rem = win.rem = rem;
     }
 
     win.addEventListener('resize', function () {
@@ -101,14 +106,14 @@ module.exports = function () {
 
     flexible.dpr = win.dpr = dpr;
     flexible.refreshRem = refreshRem;
-    flexible.rem2px     = function (d) {
+    flexible.rem2px = function (d) {
         var val = parseFloat(d) * this.rem;
         if (typeof d === 'string' && d.match(/rem$/)) {
             val += 'px';
         }
         return val;
     }
-    flexible.px2rem     = function (d) {
+    flexible.px2rem = function (d) {
         var val = parseFloat(d) / this.rem;
         if (typeof d === 'string' && d.match(/px$/)) {
             val += 'rem';

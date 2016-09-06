@@ -1,5 +1,6 @@
 import cookie from './cookie'
-var isApp = !!cookie.get("ALLPYRA_TERMINAL")
+// ALLPYRA_TERMINAL
+var isApp = !!cookie.get("BD-EGO_TERMINAL")
 function goToLogin() {
     if (isApp) {
         // 调用APP登录
