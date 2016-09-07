@@ -22,7 +22,8 @@ export function isApp() {
  link: undefined,
  title: undefined,
  desc: undefined,
- imgUrl: undefined
+ imgUrl: undefined,
+ success: undefined,
  }
  */
 export function setShare(option) {
@@ -42,7 +43,8 @@ export function setShare(option) {
             imgUrl: option.imgUrl,
             link: option.link,
             desc: option.desc,
-            title: option.title
+            title: option.title,
+            success: option.success
         })
     }
 }
