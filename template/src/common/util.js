@@ -59,3 +59,20 @@ export function goHome() {
         location.href = '/'
     }
 }
+
+/*
+ 查看优惠券
+ */
+export function goToCoupons() {
+    if (isApp) {
+        let appJson = {
+            type: 430,
+            obj: {
+                index: 1
+            }
+        }
+        window.location.href = `/?appJson=${encodeURIComponent(JSON.stringify(appJson))}`
+    } else {
+        window.location.href = `/login.html?sourceurl=${encodeURIComponent(window.location.href)}`
+    }
+}
