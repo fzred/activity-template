@@ -26,10 +26,10 @@ export function isApp() {
  success: undefined,
  }
  */
-export function setShare(option) {
+export function setShare(option, type = 601) {  // 601设置内容，602为弹出分享框
     if (isApp()) {
         var appJson = {
-            type: 601,
+            type,
             obj: {
                 content: option.link,
                 title: option.title,
